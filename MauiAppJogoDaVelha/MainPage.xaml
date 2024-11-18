@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppJogoDaVelha.MainPage">
+
+    <!-- Fundo com gradiente laranja e branco -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+            <GradientStop Color="#FFA500" Offset="0.3" />
+            <!-- Cor laranja -->
+            <GradientStop Color="White" Offset="1.1" />
+            <!-- Cor branca -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#FFA500" />
+            <!-- Cor de fundo laranja -->
+            <Setter Property="CornerRadius" Value="20" />
+            <!-- Bordas arredondadas -->
+            <Setter Property="TextColor" Value="White" />
+            <!-- Cor do texto branca -->
+            <Setter Property="FontSize" Value="80" />
+            <!-- Tamanho da fonte dos botões -->
+            <Setter Property="BorderWidth" Value="2" />
+            <!-- Borda mais grossa -->
+            <Setter Property="BorderColor" Value="White" />
+            <!-- Cor da borda branca -->
+            <Setter Property="HeightRequest" Value="100" />
+            <!-- Tamanho do botão -->
+            <Setter Property="WidthRequest" Value="100" />
+            <!-- Tamanho do botão -->
+        </Style>
+
+        <!-- Estilo do título -->
+        <Style TargetType="Label" x:Key="TitleLabelStyle">
+            <Setter Property="TextColor" Value="#FFA500" />
+            <!-- Cor laranja para o título -->
+            <Setter Property="FontSize" Value="40" />
+            <!-- Tamanho do título -->
+            <Setter Property="FontAttributes" Value="Bold" />
+            <!-- Negrito -->
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <!-- Centraliza horizontalmente -->
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <!-- Centraliza verticalmente -->
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*, *, *, *" 
+          ColumnDefinitions="*, *, *"
+          ColumnSpacing="15" RowSpacing="15" Margin="15">
+
+        <!-- Título centralizado e estilizado -->
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+               Text="Jogo da Velha" Style="{StaticResource TitleLabelStyle}" />
+
+        <!-- Botões do Jogo -->
+        <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked" />
+        <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked" />
+        <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" Clicked="Button_Clicked" />
+
+        <Button Grid.Row="2" Grid.Column="0" Clicked="Button_Clicked" />
+        <Button Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked" />
+        <Button Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked" />
+
+        <Button Grid.Row="3" Grid.Column="0" Clicked="Button_Clicked" />
+        <Button Grid.Row="3" Grid.Column="1" Clicked="Button_Clicked" />
+        <Button Grid.Row="3" Grid.Column="2" Clicked="Button_Clicked" />
+
+    </Grid>
+
+</ContentPage>
